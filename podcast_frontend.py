@@ -43,12 +43,18 @@ def main():
         with col3:
             st.subheader("Podcast Guest")
             if 'podcast_guest' in podcast_info:
-              st.write(podcast_info['podcast_guest']['name'])
+              parsed_podcast_info = json.loads(podcast_info)
+              guest_name = parsed_podcast_info['podcast_guest']['name']
+              st.write(guest_name)
+                
 
         with col4:
             st.subheader("Podcast Guest Details")
             if 'podcast_guest' in podcast_info:
-              st.write(podcast_info["podcast_guest"]['summary'])
+              parsed_podcast_info = json.loads(podcast_info)
+              guest_summary = parsed_podcast_info['podcast_guest']['summary']
+              st.write(guest_summary)
+              
 
         # Display the five key moments
         st.subheader("Key Moments")
